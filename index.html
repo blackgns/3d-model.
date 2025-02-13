@@ -1,61 +1,70 @@
-{\rtf1\ansi\ansicpg1251\cocoartf2818
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-
-\f0\fs24 \cf0 <!DOCTYPE html>\
-<html lang="ru">\
-<head>\
-    <meta charset="UTF-8">\
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
-    <title>3D \uc0\u1052 \u1086 \u1076 \u1077 \u1083 \u1100 </title>\
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>\
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>\
-    <style>\
-        body \{ margin: 0; overflow: hidden; display: flex; align-items: center; justify-content: center; height: 100vh; background-color: #f0f0f0; \}\
-        canvas \{ display: block; \}\
-    </style>\
-</head>\
-<body>\
-    <script>\
-        const scene = new THREE.Scene();\
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);\
-        const renderer = new THREE.WebGLRenderer(\{ antialias: true \});\
-        renderer.setSize(window.innerWidth, window.innerHeight);\
-        document.body.appendChild(renderer.domElement);\
-\
-        const light = new THREE.AmbientLight(0xffffff, 1);\
-        scene.add(light);\
-        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);\
-        directionalLight.position.set(5, 5, 5);\
-        scene.add(directionalLight);\
-\
-        const loader = new THREE.GLTFLoader();\
-        loader.load('model.glb', (gltf) => \{\
-            const model = gltf.scene;\
-            model.scale.set(1, 1, 1);\
-            model.position.set(0, -1, 0);\
-            scene.add(model);\
-            animate();\
-        \}, undefined, (error) => \{\
-            console.error('\uc0\u1054 \u1096 \u1080 \u1073 \u1082 \u1072  \u1079 \u1072 \u1075 \u1088 \u1091 \u1079 \u1082 \u1080  \u1084 \u1086 \u1076 \u1077 \u1083 \u1080 :', error);\
-        \});\
-\
-        camera.position.set(0, 0, 3);\
-\
-        function animate() \{\
-            requestAnimationFrame(animate);\
-            renderer.render(scene, camera);\
-        \}\
-\
-        window.addEventListener('resize', () => \{\
-            renderer.setSize(window.innerWidth, window.innerHeight);\
-            camera.aspect = window.innerWidth / window.innerHeight;\
-            camera.updateProjectionMatrix();\
-        \});\
-    </script>\
-</body>\
-</html>\
-}
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2566">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="ru"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;3D Модель&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"&gt;&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"&gt;&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>body { margin: 0; overflow: hidden; display: flex; align-items: center; justify-content: center; height: 100vh; background-color: #f0f0f0; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>canvas { display: block; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const scene = new THREE.Scene();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const renderer = new THREE.WebGLRenderer({ antialias: true });</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>renderer.setSize(window.innerWidth, window.innerHeight);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.body.appendChild(renderer.domElement);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const light = new THREE.AmbientLight(0xffffff, 1);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>scene.add(light);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>directionalLight.position.set(5, 5, 5);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>scene.add(directionalLight);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const loader = new THREE.GLTFLoader();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>loader.load('model.glb', (gltf) =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const model = gltf.scene;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>model.scale.set(1, 1, 1);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>model.position.set(0, -1, 0);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>scene.add(model);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>animate();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}, undefined, (error) =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>console.error('Ошибка загрузки модели:', error);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>camera.position.set(0, 0, 3);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function animate() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>requestAnimationFrame(animate);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>renderer.render(scene, camera);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>window.addEventListener('resize', () =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>renderer.setSize(window.innerWidth, window.innerHeight);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>camera.aspect = window.innerWidth / window.innerHeight;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>camera.updateProjectionMatrix();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+</body>
+</html>
